@@ -3,11 +3,13 @@ Hello humans, I'm @{{bot_name}}, a robot that can help you with some common edit
 For a list of things I can do to help you, just type:
 
 ```
-@{{bot_name}} commands
+@{{bot_name}} help
 ```
 
-For example, to regenerate the paper pdf after making changes in the paper's md or bib files, type:
+For example, to set the repository for your review submission, type:
 
 ```
-@{{bot_name}} generate pdf
+@{{bot_name}} set <repository_url> as repository
 ```
+
+replacing `<repository_url>` with the full github address, for example `https://github.com/username/repository`.
