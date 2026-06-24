@@ -1,0 +1,16 @@
+description: For requesting a review via structured form
+labels: review
+name: Review request form
+title: "[REVIEW] <title>"
+body:
+  - attributes:
+      label: Github repository URL
+    type: input
+  - attributes:
+      label: Upload report PDF
+      description: "Drag and drop a PDF of the report to be reviewed"
+    id: report
+    type: upload
+    validations:
+      accept: ".pdf"
+      required: false
