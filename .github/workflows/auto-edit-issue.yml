@@ -35,7 +35,7 @@ jobs:
               console.log("Match found! Updating body...");
               
               // 4. Perform the actual replacement wrapping $2
-              body = body.replace(regex, '$1$2');
+              body = body.replace(regex, '$1<--property-->$2<--end-property-->');
 
               await github.rest.issues.update({
                 owner: context.repo.owner,
