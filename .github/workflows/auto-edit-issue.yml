@@ -1,0 +1,42 @@
+name: Auto-Edit Issue Property
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  wrap-property:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write # Crucial for allowing the bot to edit the issue
+    steps:
+      - name: Wrap Property X in HTML Tags
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            let body = issue.body;
+
+            // 1. Define the heading your form generates for property "x"
+            // For example, if your form label is "Property X", GitHub turns it into "### Property X"
+            const targetHeading = "### Property X";
+
+            if (body && body.includes(targetHeading)) {
+              // 2. Regex to capture the heading/whitespace ($1) and the user's input line ($2)
+              const regex = new RegExp(`(${targetHeading}\\s*\\n\\s*)([^\\n]+)`);
+              
+              // 3. Replace it by wrapping the input line in your custom HTML tags
+              body = body.replace(regex, '$1$2');
+
+              // 4. Update the issue with the modified body
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: body
+              });
+              
+              console.log("Successfully wrapped Property X!");
+            } else {
+              console.log("Target heading not found in the issue body.");
+            }
