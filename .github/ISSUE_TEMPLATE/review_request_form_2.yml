@@ -5,7 +5,7 @@ body:
 - type: "input"
   attributes:
     label: "Report title"
-    description: "Title of the report"
+    placeholder: "Report title, as it appears on the submitted report"
   validations:
     required: true
 - type: "dropdown"
@@ -13,10 +13,8 @@ body:
     label: "Type of report"
     description: "Select one"
     options:
-    - label: "Report"
-      required: false
-    - label: "Other"
-      required: false
+      - "Report"
+      - "Other"
   validations:
     required: true
 - type: "dropdown"
@@ -24,28 +22,34 @@ body:
     label: "Submission type"
     description: "Select one..."
     options:
-    - label: "New report"
-      required: false
-    - label: "Resubmission"
-      required: false
+      - "New report"
+      - "Resubmission"
   validations:
     required: true
 - type: "textarea"
   attributes:
     label: "Message to editors"
-    description: "Please describe the type of report you are submitting, along with a short 1-2 line description. Include anything that the editors should be aware of when reviewing your submission."
+    placeholder: "Please describe the type of report you are submitting, along with a short 1-2 line description. Include anything that the editors should be aware of when reviewing your submission."
   validations:
     required: true
 - type: "input"
   attributes:
     label: "Git repository of the source file"
-    description: "For example, the github link where the .qmd source file is stored, in the form https://github.com/username/repository"
+    description: "The github link where the .qmd source file is stored."
+    placeholder: "For example, https://github.com/username/repository"
   validations:
     required: true
 - type: "input"
   attributes:
     label: "Author's Github username"
-    description: "Your Github user handle. For example for @username, enter \"username\""
+    description: "Your Github user handle."
+    placeholder: "For example, @username"
+  validations:
+    required: true
+- type: "input"
+  attributes:
+    label: "Link to current compiled .pdf version"
+    description: "A publicly-accessible link to the compiled .pdf version of the report."
   validations:
     required: true
 - type: "checkboxes"
