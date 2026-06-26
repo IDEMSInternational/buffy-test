@@ -1,7 +1,7 @@
 name: "Report review request"
 description: "Reqest a report review"
 title: "[REVIEW]: "
-labels: "review"
+labels: ["review"]
 body:
 - type: "markdown"
   attributes:
