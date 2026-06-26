@@ -1,7 +1,15 @@
 name: "Report review request"
 description: "Reqest a report review"
 title: "[REVIEW]: "
+labels: "review"
 body:
+- type: "markdown"
+  attributes:
+    value: "## Review request"
+- type: "markdown"
+  attributes:
+    value: |
+      Thank you for submitting a review request. Please complete the following details. 
 - type: "input"
   attributes:
     label: "Report title"
