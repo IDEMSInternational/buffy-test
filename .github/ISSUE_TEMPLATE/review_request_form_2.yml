@@ -32,14 +32,15 @@ body:
     label: "Submission type"
     description: "Select one..."
     options:
-      - "New report"
+      - "New submission"
       - "Resubmission"
+      - "Major revision"
   validations:
     required: true
 - type: "textarea"
   attributes:
     label: "Message to editors"
-    placeholder: "Please describe the type of report you are submitting, along with a short 1-2 line description. Include anything that the editors should be aware of when reviewing your submission."
+    placeholder: "Please confirm the type of report you are submitting, along with a short 1-2 line description. Include anything that the editors should be aware of when reviewing your submission, such as any conflicts of interest. If your submission is a resubmission or a major revision, please also outline the changes from the previous submission."
   validations:
     required: true
 - type: "input"
