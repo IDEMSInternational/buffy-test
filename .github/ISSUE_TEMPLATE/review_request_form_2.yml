@@ -17,6 +17,7 @@ body:
   validations:
     required: true
 - type: "dropdown"
+  id: report-type
   attributes:
     label: "Type of report"
     description: "Select one"
@@ -26,6 +27,7 @@ body:
   validations:
     required: true
 - type: "dropdown"
+  id: submission-type
   attributes:
     label: "Submission type"
     description: "Select one..."
