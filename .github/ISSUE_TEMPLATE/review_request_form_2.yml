@@ -1,5 +1,6 @@
 name: "Report review request"
-fields:
+title: "[REVIEW]: "
+body:
 - type: "input"
   attributes:
     label: "Report title"
