@@ -1,4 +1,5 @@
 name: "Report review request"
+description: "Reqest a report review"
 title: "[REVIEW]: "
 body:
 - type: "input"
